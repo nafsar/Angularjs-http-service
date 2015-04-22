@@ -1,0 +1,36 @@
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>HTTP Service</title>
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+		<!-- jQuery library -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+		<!-- Latest compiled JavaScript -->
+		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+		<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.0-rc.0/angular.min.js"></script>
+		<script src="app.js"></script>
+		<script src="products.js"></script>
+	</head>
+	<body ng-app="httpService">
+		<div ng-controller="FetchController">
+			<select ng-model="method" aria-label="Request method">
+				<option>GET</option>
+				<option>JSONP</option>
+			</select>
+			<input type="text" ng-model="url" size="80" aria-label="URL" />
+			<button id="fetchbtn" ng-click="fetch()">
+				fetch
+			</button>
+			<br>
+			<button id="samplegetbtn" ng-click="updateModel('GET', 'http-service.html')">
+				Sample GET
+			</button>
+	        <jsonp-service></jsonp-service>
+			<stat-response></stat-response>
+		</div>
+	</body>
+</html>
